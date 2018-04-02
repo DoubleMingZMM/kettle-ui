@@ -1,5 +1,5 @@
 <template>
-<div>{{msg}}</div>
+<div>姓名：{{msg}}，年龄：{{age}}</div>
 </template>
 
 <script>
@@ -7,7 +7,19 @@ export default {
   name: 'zmm',
   data () {
     return {
-      msg: 'zmm is big'
+      msg: 'daniel',
+      age: this.$store.state.age || 0
+    }
+  },
+  created () {
+    this.load(this.page)
+  },
+  methods: {
+    load () {
+      this.$store.dispatch('FETCH_MODULES', {
+        page: 1
+      }).then(() => {
+      })
     }
   }
 }

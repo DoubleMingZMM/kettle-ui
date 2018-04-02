@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import zmm from '@/components/zmm'
+import zmm from '@/view/zmm'
+import dashboard from '@/view/dashboard'
 
 Vue.use(Router)
 
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'dashboard',
+      component: dashboard
     },
     {
       path: '/zmm',
