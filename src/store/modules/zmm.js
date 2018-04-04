@@ -11,8 +11,8 @@ const zmm = {
     }
   },
   actions: {
-    FETCH_MODULES: ({ commit, dispatch, state }, { page }) => {
-      return fetchModules({page})
+    FETCH_MODULES: ({ commit, dispatch, state }, { payload }) => {
+      return fetchModules(payload)
         .then(items => commit('SET_MODULES', { items }))
     }
   },
