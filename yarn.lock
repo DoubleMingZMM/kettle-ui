@@ -1526,9 +1526,9 @@ chownr@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/chownr/download/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
 
-chromedriver@^2.27.2:
+chromedriver@^2.37.0:
   version "2.37.0"
-  resolved "http://registry.npm.taobao.org/chromedriver/download/chromedriver-2.37.0.tgz#e7867c8236f6bb89024737bbffc9a4b33ded658b"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.37.0.tgz#e7867c8236f6bb89024737bbffc9a4b33ded658b"
   dependencies:
     del "^3.0.0"
     extract-zip "^1.6.5"
