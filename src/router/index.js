@@ -1,30 +1,47 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '../App'
+// import App from '../App'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(Router)
 
 const routes = new Router({
   routes: [
     {
+      path: '/login', // 登录
+      meta: { auth: false },
+      component: resolve => require(['../view/login/'], resolve)
+    },
+    {
       path: '/',
-      component: App,
+      component: resolve => require(['../components/layout/index'], resolve),
+      meta: { auth: false },
       children: [
         {
-          path: '/login', // 登录
+          path: '/dashborad', // dashborad
           meta: { auth: false },
-          component: resolve => require(['../view/login/'], resolve)
+          component: resolve => require(['../view/dashboard'], resolve)
         },
         {
-          path: '/zmm', // 个人主页
-          meta: { auth: true },
+          path: '/cmdb', // 资源管理
+          meta: { auth: false },
+          component: resolve => require(['../view/cmdb/'], resolve)
+        },
+        {
+          path: '/zmm', // 资源管理
+          meta: { auth: false },
           component: resolve => require(['../view/zmm'], resolve)
         },
         {
-          path: '*', // 其他页面，强制跳转到登录页面
-          redirect: '/login'
+          path: '*', // 其他页面，强制跳转到dashborad
+          redirect: '/dashborad'
         }
       ]
+    },
+    {
+      path: '*', // 其他页面，强制跳转到登录页面
+      redirect: '/login'
     }
   ]
 })
@@ -44,8 +61,13 @@ routes.beforeEach((to, from, next) => {
       })
     }
   } else {
+    NProgress.start()
     next() // 如果无需token,那么随它去吧
   }
+})
+
+routes.afterEach(transition => {
+  NProgress.done()
 })
 
 export default routes

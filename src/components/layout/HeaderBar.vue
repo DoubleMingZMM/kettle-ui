@@ -26,12 +26,12 @@ export default {
 <style>
 .header{
   background-color:#545c64;
-  position:fixed;
-  z-index:999;
+ /* position:fixed;
+  z-index:999;*/
   height:60px;
-  top:0;
+  /*top:0;
   left:0;
-  right:0;
+  right:0;*/
 }
 .inner{
   box-sizing:border-box;
