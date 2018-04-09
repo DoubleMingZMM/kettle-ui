@@ -1,5 +1,11 @@
 <template>
-<div>{{msg}}</div>
+<div>
+  <!--<el-breadcrumb separator="/">-->
+    <!--<el-breadcrumb-item><i class="el-icon-menu"></i> 表格</el-breadcrumb-item>-->
+    <!--<el-breadcrumb-item>基础表格</el-breadcrumb-item>-->
+  <!--</el-breadcrumb>-->
+  {{msg}}
+</div>
 </template>
 
 <script>
